@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Модальное окно | pcvector.net</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta http-equiv="X-UA-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/demo.css">
+
+  <link rel="stylesheet" type="text/css" href="css/remodal.css">
+  <link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
+</head>
+
+<body>
+  <script>
+    var articleLink = '/scripts/lightbox_dialog_overlay/483-modalnoe-okno.html';
+  </script>
+
+
+  <div class="page remodal-bg">
+    <header class="header">
+      <a class="logo" href="/">Лого</a>
+      <nav>
+        <ul>
+          <li><a href="">Новости</a></li>
+          <li><a href="">Статьи</a></li>
+          <li><a href="">Услуги</a></li>
+          <li><a href="">Вакансии</a></li>
+          <li><a href="">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+
+      <a href="#modal" class="btn btn-primary">Модальное окно №1</a>
+      <br>
+      <a href="#modal2" class="btn btn-primary">Модальное окно №2</a>
+
+
+      <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+        <button data-remodal-action="close" class="remodal-close" aria-label="Закрыть"></button>
+        <div>
+          <h2 id="modal1Title">Remodal</h2>
+          <p id="modal1Desc">
+            Содержимое модального окна. Может быть всё что угодно и текст и поля форм и графика и т.д.
+          </p>
+        </div>
+        <br>
+        <button data-remodal-action="cancel" class="remodal-cancel">Отмена</button>
+        <button data-remodal-action="confirm" class="remodal-confirm">Ок</button>
+      </div>
+
+      <div data-remodal-id="modal2" role="dialog" aria-labelledby="modal2Title" aria-describedby="modal2Desc">
+        <div>
+          <h2 id="modal2Title">Другое окно</h2>
+          <p id="modal2Desc">
+            Привет!
+          </p>
+        </div>
+        <br>
+        <button data-remodal-action="confirm" class="remodal-confirm">Привет!</button>
+      </div>
+
+
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2018 <a href="">Скрипты для сайтов</a></p>
+    </footer>
+  </div>
+
+  <!-- You can define the global options -->
+  <script>
+    // window.REMODAL_GLOBALS = {
+    //   NAMESPACE: 'remodal',
+    //   DEFAULTS: {
+    //     hashTracking: true,
+    //     closeOnConfirm: true,
+    //     closeOnCancel: true,
+    //     closeOnEscape: true,
+    //     closeOnOutsideClick: true,
+    //     modifier: ''
+    //   }
+    // };
+  </script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/remodal.min.js"></script>
+  <!-- Events -->
+  <script>
+    $(document).on('opening', '.remodal', function () {
+      console.log('opening');
+    });
+
+    $(document).on('opened', '.remodal', function () {
+      console.log('opened');
+    });
+
+    $(document).on('closing', '.remodal', function (e) {
+      console.log('closing' + (e.reason ? ', reason: ' + e.reason : ''));
+    });
+
+    $(document).on('closed', '.remodal', function (e) {
+      console.log('closed' + (e.reason ? ', reason: ' + e.reason : ''));
+    });
+
+    $(document).on('confirmation', '.remodal', function () {
+      console.log('confirmation');
+    });
+
+    $(document).on('cancellation', '.remodal', function () {
+      console.log('cancellation');
+    });
+
+  //  Usage:
+  //  $(function() {
+  //
+  //    // In this case the initialization function returns the already created instance
+  //    var inst = $('[data-remodal-id=modal]').remodal();
+  //
+  //    inst.open();
+  //    inst.close();
+  //    inst.getState();
+  //    inst.destroy();
+  //  });
+
+    //  The second way to initialize:
+    $('[data-remodal-id=modal2]').remodal({
+      modifier: 'with-red-theme'
+    });
+  </script>
+
+</body>
+</html>
