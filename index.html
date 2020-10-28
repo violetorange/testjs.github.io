@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Модальное окно</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="modal-overlay" id="modal-overlay"></div>
+<html lang="en" >
 
-<div class="modal" id="modal" aria-hidden="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
-  <button class="close-button" id="close-button" title="Закрыть модальное окно">Закрыть</button>
-  <div class="modal-guts" role="document">
-    <h1>Заголовок</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae expedita corrupti laudantium aperiam, doloremque explicabo ipsum earum dicta saepe delectus totam vitae ipsam doloribus et obcaecati facilis eius assumenda, cumque.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae expedita corrupti laudantium aperiam, doloremque explicabo ipsum earum dicta saepe delectus totam vitae ipsam doloribus et obcaecati facilis eius assumenda, cumque.</p>
-    
+<head>
+  <meta charset="UTF-8">
+  <title>Elastic 'more info' button</title>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<style>
+  /* prevent FOUC */
+  .muddle {
+    opacity: 0;
+  }
+  
+</style>
+<div class="flex-center-children vh-1 padding-1">
+  <div class="card" id="sample-card">
+    <div class="close-button">X</div>
+    <div class="button" id="sample-button">More info</div>
+    <div class="muddle" id="sample-paragraph">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia voluptatum id at laborum inventore ex non, magnam fugiat, consequatur fugit, vero quisquam qui fuga soluta ullam iure voluptatibus. Ab, nihil.</div>
   </div>
 </div>
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/6859/tween.min_1.js'></script>
 
-<button id="open-button" class="open-button">Открыть окно</button>
+  
 
-	<script>
-		var modal = document.querySelector("#modal"),
-		    modalOverlay = document.querySelector("#modal-overlay"),
-		    closeButton = document.querySelector("#close-button"),
-		    openButton = document.querySelector("#open-button");
+    <script  src="js/index.js"></script>
 
-	closeButton.addEventListener("click", function() {
-	  modal.classList.toggle("closed");
-	  modalOverlay.classList.toggle("closed");
-	});
 
-	openButton.addEventListener("click", function() {
-	  modal.classList.toggle("closed");
-	  modalOverlay.classList.toggle("closed");
-	});
 
-	</script>
+
 </body>
+
 </html>
