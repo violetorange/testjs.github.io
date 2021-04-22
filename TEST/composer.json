@@ -1,6 +1,0 @@
-{
-    "name": "admin/test",
-    "require": {
-        "kreait/firebase-php": "^4.44"
-    }
-}
